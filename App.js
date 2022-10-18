@@ -113,15 +113,15 @@ export default class App extends Component {
         <Image source={ukulelePng} style={styles.photos} />
         <TouchableOpacity style={styles.control} onPress={this.ukulelePlayPause} >
           {this.state.ukulelePlaying ?
-          <Feather name="pause" size={32} color="000000"/> :
-          <Feather name="play" size={32} color="000000"/> 
+          <Feather name="pause" size={32} color="#563822"/> :
+          <Feather name="play" size={32} color="#563822"/> 
           }
         </TouchableOpacity>
         <Image source={drumsPng} style={styles.photos} />
         <TouchableOpacity style={styles.control} onPress={this.drumsPlayPause} >
           {this.state.drumsPlaying ?
-          <Feather name="pause" size={32} color="000000"/> :
-          <Feather name="play" size={32} color="000000"/> 
+          <Feather name="pause" size={32} color="#563822"/> :
+          <Feather name="play" size={32} color="#563822"/> 
           }
         </TouchableOpacity>
         <StatusBar style="auto" />
@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     margin: 30,
     fontWeight: 'bold',
+    color: '#563822',
   },
   photos: {
     width: 350,
@@ -154,4 +155,3 @@ const styles = StyleSheet.create({
   }
 });
 
-// <StatusBar style="auto" />
