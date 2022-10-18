@@ -64,33 +64,6 @@ export default class App extends Component {
     });
 
   }
-  // ukulelePlayPause = async () => {
-  //   let { ukulelePlaying, ukuleleInstance, drumsPlaying, drumsInstance} = this.state;
-  //   ukulelePlaying ? await ukuleleInstance.pauseAsync() : await ukuleleInstance.playAsync(), await drumsInstance.pauseAsync();
-    
-  //   if (drumsPlaying && drumsInstance) {
-  //     drumsInstance.pauseAsync();
-  //     drumsPlaying = false;
-  //   } 
-  //   this.setState({
-  //     ukulelePlaying: !ukulelePlaying,
-  //     drumsPlaying
-  //   });
-
-  // }
-  // drumsPlayPause = async () => {
-  //   let { drumsPlaying, drumsInstance, ukulelePlaying, ukuleleInstance} = this.state;
-  //   drumsPlaying ? await drumsInstance.pauseAsync() : await drumsInstance.playAsync(), await ukuleleInstance.pauseAsync();
-  //   if (ukulelePlaying && ukuleleInstance) {
-  //     ukuleleInstance.pauseAsync();
-  //     ukulelePlaying = false;
-  //   }
-  //   this.setState({
-  //     drumsPlaying: !drumsPlaying,
-  //     ukulelePlaying,
-  //   });
-
-  // }
 
 
   async loadUkeleleAudio() {
