@@ -64,12 +64,35 @@ export default class App extends Component {
     });
 
   }
+  // ukulelePlayPause = async () => {
+  //   let { ukulelePlaying, ukuleleInstance, drumsPlaying, drumsInstance} = this.state;
+  //   ukulelePlaying ? await ukuleleInstance.pauseAsync() : await ukuleleInstance.playAsync(), await drumsInstance.pauseAsync();
+    
+  //   if (drumsPlaying && drumsInstance) {
+  //     drumsInstance.pauseAsync();
+  //     drumsPlaying = false;
+  //   } 
+  //   this.setState({
+  //     ukulelePlaying: !ukulelePlaying,
+  //     drumsPlaying
+  //   });
 
-  onPlaybackStatusUpdate = (status) => {
-    this.setState({
-      isBuffering: status.isBuffering
-    });
-  }
+  // }
+  // drumsPlayPause = async () => {
+  //   let { drumsPlaying, drumsInstance, ukulelePlaying, ukuleleInstance} = this.state;
+  //   drumsPlaying ? await drumsInstance.pauseAsync() : await drumsInstance.playAsync(), await ukuleleInstance.pauseAsync();
+  //   if (ukulelePlaying && ukuleleInstance) {
+  //     ukuleleInstance.pauseAsync();
+  //     ukulelePlaying = false;
+  //   }
+  //   this.setState({
+  //     drumsPlaying: !drumsPlaying,
+  //     ukulelePlaying,
+  //   });
+
+  // }
+
+
   async loadUkeleleAudio() {
     const ukuleleInstance = new Audio.Sound();
     const source = require('./music/ukulele.mp3');
@@ -77,10 +100,6 @@ export default class App extends Component {
       shouldPlay: this.state.ukulelePlaying,
       volume: this.state.volume,
     };
-    ukuleleInstance
-    .setOnPlaybackStatusUpdate(
-      this.onPlaybackStatusUpdate
-    );
     await ukuleleInstance.loadAsync(source, status, false);
     this.setState({
       ukuleleInstance
@@ -95,10 +114,6 @@ export default class App extends Component {
       shouldPlay: this.state.drumsPlaying,
       volume: this.state.volume,
     };
-    drumsInstance
-    .setOnPlaybackStatusUpdate(
-      this.onPlaybackStatusUpdate
-    );
     await drumsInstance.loadAsync(source, status, false);
     this.setState({
       drumsInstance: drumsInstance
@@ -154,4 +169,3 @@ const styles = StyleSheet.create({
     margin: 20,
   }
 });
-
